@@ -1,0 +1,12 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t ajaybojedla/hello-world-python .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER-ID" --password-stdin
+  - docker push ajaybojedla/hello-world-python
+  
+    
+
