@@ -5,8 +5,8 @@ services:
 
 before_install:
   - docker build -t ajaybojedla/hello-world-python .
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER-ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push ajaybojedla/hello-world-python
-  
-    
+
+
 
