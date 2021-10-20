@@ -9,5 +9,17 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push ajaybojedla/hello-world-python
 
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-1'
+  app: 'hello-world-python'
+  env: 'Helloworldpython-env'
+  bucket_name: 'elasticbeanstalk-us-east-1-736796324192'
+  bucket_path: 'hello-world-python'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY  
+
 
 
