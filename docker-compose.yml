@@ -1,0 +1,7 @@
+verison: '3'
+
+services:
+  hello-world:
+    image: "ajaybojedla/hello-world-python"
+    mem_limit: 128m
+    hostname: hello-world
